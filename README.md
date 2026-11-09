@@ -32,7 +32,7 @@ Derleme; Unsplash görsel bağlantılarını, ikonları ve "AIgro" yazımını (
 
 ## Referans logoları
 
-Alttaki kayan referans barı `src/layout.html` içinde. Logo dosyaları `assets/img/ref/` altında; şu an yalnızca Harves logosu var, AlPolimer, Özdoğu ve Damper geçici olarak yazıyla gösteriliyor. Logo geldiğinde dosyayı bu klasöre koyup ilgili `<span class="logo-word">` satırını `<img>` ile değiştirin (her iki listede de).
+Alttaki kayan referans barı `src/layout.html` içinde. Logo dosyaları `assets/img/ref/` altında; şu an yalnızca Harves logosu var, AlPolimer ve Özdoğu geçici olarak yazıyla gösteriliyor. Logo geldiğinde dosyayı bu klasöre koyup ilgili `<span class="logo-word">` satırını `<img>` ile değiştirin (her iki listede de).
 
 ## Yerelde açma
 

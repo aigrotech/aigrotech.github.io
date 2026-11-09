@@ -624,7 +624,6 @@ a.contact-card:hover { border-color: var(--teal-ink); box-shadow: var(--shadow-s
 .logo-tile:hover .logo-word { color: var(--navy); }
 .logo-alpolimer { font-weight: 800; }
 .logo-ozdogu { font-weight: 700; font-style: italic; }
-.logo-damper { font-weight: 800; letter-spacing: .14em; font-size: 1.25rem; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee { -webkit-mask-image: none; mask-image: none; }
