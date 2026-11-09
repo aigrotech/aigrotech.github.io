@@ -632,3 +632,22 @@ a.contact-card:hover { border-color: var(--teal-ink); box-shadow: var(--shadow-s
   .marquee-list { flex-wrap: wrap; justify-content: center; row-gap: 16px; }
 }
 @media (max-width: 600px) { .logo-tile { width: 190px; height: 72px; margin: 0 10px; } .logo-word { font-size: 1.2rem; } }
+
+/* ---- Technology / IP ----------------------------------------------------- */
+.tech { background: linear-gradient(180deg, var(--paper), #fff); border-bottom: 1px solid var(--line); }
+.tech-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.tech h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); }
+.tech-chain { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.tech-chain li { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-weight: 600; font-size: .93rem; box-shadow: var(--shadow-sm); }
+.tech-chain li .icon { color: var(--teal-ink); width: 18px; height: 18px; }
+.tech-chain li:not(:last-child)::after { content: "→"; margin-left: 6px; color: var(--muted); font-weight: 400; }
+.tech-chain li:nth-child(2) .icon { color: var(--blue-ink); }
+.tech-chain li:nth-child(3) .icon { color: var(--berry); }
+.ip-list { list-style: none; display: grid; gap: 16px; }
+.ip-card { position: relative; padding: 24px 26px 24px 28px; border-radius: var(--r); background: var(--navy); color: #fff; overflow: hidden; }
+.ip-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--teal), var(--blue)); }
+.ip-tag { display: inline-flex; align-items: center; gap: 8px; font: 700 .74rem var(--font-head); letter-spacing: .12em; text-transform: uppercase; color: var(--teal-300); margin-bottom: 10px; }
+.ip-tag .icon { width: 16px; height: 16px; }
+.ip-card strong { display: block; font: 700 1.12rem/1.35 var(--font-head); margin-bottom: 4px; }
+.ip-card p { margin: 0; color: var(--on-dark-2); font-size: .93rem; }
+@media (max-width: 900px) { .tech-grid { grid-template-columns: 1fr; } }
