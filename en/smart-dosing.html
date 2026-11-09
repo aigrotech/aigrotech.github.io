@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Nutrient Dosing | AIgro</title>
+  <meta name="description" content="AIgro Smart Nutrient Dosing forecasts pH and EC in soilless greenhouses, explains each decision and checks every command against an independent safety layer on the controller board.">
+  <link rel="canonical" href="https://tarikyil.github.io/aigro-web/en/smart-dosing.html">
+  <link rel="alternate" hreflang="tr" href="https://tarikyil.github.io/aigro-web/akilli-dozajlama.html">
+  <link rel="alternate" hreflang="en" href="https://tarikyil.github.io/aigro-web/en/smart-dosing.html">
+  <link rel="alternate" hreflang="x-default" href="https://tarikyil.github.io/aigro-web/akilli-dozajlama.html">
+  <meta name="theme-color" content="#0C1A2E">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="AIgro">
+  <meta property="og:title" content="Smart Nutrient Dosing | AIgro">
+  <meta property="og:description" content="AIgro Smart Nutrient Dosing forecasts pH and EC in soilless greenhouses, explains each decision and checks every command against an independent safety layer on the controller board.">
+  <meta property="og:url" content="https://tarikyil.github.io/aigro-web/en/smart-dosing.html">
+  <meta property="og:image" content="https://tarikyil.github.io/aigro-web/assets/img/og-cover-en.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://rsms.me">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M7 7l10 10M17 7L7 17"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6.5 6.6 6.5 11.2A6.5 6.5 0 0 1 5.5 14.2C5.5 9.6 12 3 12 3z"/><path d="M9 15a3 3 0 0 0 3 3"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6.2L4.6 18.4A1.8 1.8 0 0 0 6.2 21h11.6a1.8 1.8 0 0 0 1.6-2.6L14 9.2V3"/><path d="M7.2 15h9.6"/></symbol>
+  <symbol id="i-shelves" viewBox="0 0 24 24"><path d="M4 3v18M20 3v18M4 8.5h16M4 14.5h16M4 20.5h16"/><path d="M8 8.5c0-2 1-3 2-3.5M13 8.5c0-2 1.2-3 2.2-3.5M8 14.5c0-2 1-3 2-3.5M13 14.5c0-2 1.2-3 2.2-3.5"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10.5 10.5 5 20 4.5 19.5 14 14 19 5.5 19"/><path d="M5 19l7.5-7.5"/></symbol>
+  <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 2.5V6M15 2.5V6M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18.5a4.5 4.5 0 0 1-.6-9A6 6 0 0 1 18 9a4.75 4.75 0 0 1-.5 9.5z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 15l3.5-4.5 3 3L20 7"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.8-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.7-7.5-9.5V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 16a4.8 4.8 0 0 1 6.4 0"/><path d="M12 19.5h.01"/></symbol>
+  <symbol id="i-signal" viewBox="0 0 24 24"><path d="M4 20v-3M9 20v-7M14 20V9M19 20V4"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.8 2H4.2z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="10" rx="5"/><circle cx="16.5" cy="12" r="3"/></symbol>
+  <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M10 14.2V5a2 2 0 0 1 4 0v9.2a4 4 0 1 1-4 0z"/><path d="M12 17.5V10"/></symbol>
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M3.8 17a9 9 0 1 1 16.4 0"/><path d="M12 14l4.2-4.2"/><circle cx="12" cy="14.5" r="1.2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.5 11L12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7.5L19 7.5V21H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8h.01"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M15.5 4.6a3.5 3.5 0 0 1 0 6.8M21.5 20a6.5 6.5 0 0 0-4-6"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4h12l-2 4.5 2 4.5H5"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11A8 8 0 0 0 5.4 7.5M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14.6 3.5M20 20v-4h-4"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+  <symbol id="i-tank" viewBox="0 0 24 24"><path d="M5 6c0-1.7 3.1-3 7-3s7 1.3 7 3v12c0 1.7-3.1 3-7 3s-7-1.3-7-3z"/><path d="M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 8h13v5a6 6 0 0 1-6 6h-1a6 6 0 0 1-6-6z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17M8 2.5c0 1.5 1 1.5 1 3M12 2.5c0 1.5 1 1.5 1 3"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></symbol>
+  <symbol id="i-pump" viewBox="0 0 24 24"><circle cx="10" cy="13" r="6"/><path d="M10 9.5v3.5l2.5 1.5M16 13h5M10 7V3h-4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header is-overlay">
+  <div class="container bar">
+    <a class="brand" href="index.html" aria-label="AIgro home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00BFA5"/><stop offset="1" stop-color="#247CFF"/></linearGradient></defs>
+        <rect width="40" height="40" rx="11" fill="url(#bm)"/>
+        <path d="M20 8.5c-5 6.4-8 10.6-8 14.6a8 8 0 0 0 16 0c0-4-3-8.2-8-14.6z" fill="#fff"/>
+        <path d="M16.2 25.5c2.6-.2 5.6-2.2 6.6-6.2" fill="none" stroke="#00A58E" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="wordmark aigro"><span class="ai">AI</span>gro</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Open menu</span><span class="bars" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Main menu">
+      <ul class="nav-list">
+        <li class="has-dropdown">
+          <button class="nav-link" type="button" data-dropdown aria-expanded="false" aria-controls="dd-solutions" data-current="true">
+            Solutions <svg class="chev" aria-hidden="true" focusable="false"><use href="#i-chev"/></svg>
+          </button>
+          <div class="dropdown" id="dd-solutions">
+            <a href="smart-dosing.html" aria-current="page">
+              <span class="dd-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg></span>
+              <span><strong>Smart Nutrient Dosing <span class="chip chip-pilot">Pilot</span></strong><span class="desc">Autonomous dosing that forecasts pH and EC, within safety limits</span></span>
+            </a>
+            <a href="water-monitoring.html">
+              <span class="dd-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-drop"/></svg></span>
+              <span><strong>Water Monitoring System <span class="chip chip-live">In the field</span></strong><span class="desc">Tank level, temperature, turbidity and alarms</span></span>
+            </a>
+            <a href="vertical-farming.html">
+              <span class="dd-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shelves"/></svg></span>
+              <span><strong>Vertical Farming Module <span class="chip chip-rnd">R&D</span></strong><span class="desc">Grow-on-site module for cafés and restaurants</span></span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#platform">Platform</a></li>
+        <li><a class="nav-link" href="index.html#saha">In the field</a></li>
+        <li><a class="nav-link" href="index.html#hakkimizda">About</a></li>
+        <li><a class="nav-link lang-switch" href="../akilli-dozajlama.html" hreflang="tr" lang="tr" aria-label="Türkçe sürüm"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> TR</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="contact.html">Book a meeting <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero on-dark" aria-labelledby="page-title">
+    <div class="hero-media"><img src="https://images.unsplash.com/photo-1667509860948-46d20f127b43?auto=format&fit=crop&q=72&w=2000" srcset="https://images.unsplash.com/photo-1667509860948-46d20f127b43?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1667509860948-46d20f127b43?auto=format&fit=crop&q=72&w=960 960w, https://images.unsplash.com/photo-1667509860948-46d20f127b43?auto=format&fit=crop&q=72&w=1400 1400w, https://images.unsplash.com/photo-1667509860948-46d20f127b43?auto=format&fit=crop&q=72&w=2000 2000w" sizes="100vw" alt="" fetchpriority="high"></div>
+    <div class="container">
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#cozumler">Solutions</a></li>
+        <li aria-current="page">Smart Nutrient Dosing</li>
+      </ol>
+      <span class="chip chip-pilot">Pilot stage</span>
+      <h1 id="page-title">Smart Nutrient Dosing</h1>
+      <p class="lead">Safe autonomous dosing for soilless greenhouses that forecasts pH and EC and explains its decisions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="contact.html">Discuss a pilot <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost-light" href="#dongu">How it works</a>
+      </div>
+      <ul class="key-facts">
+        <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg> 3 dosing channels</li>
+        <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg> Safety layer on the board</li>
+        <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"/></svg> Works locally offline</li>
+        <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-doc"/></svg> Every dose logged</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="problem-title">
+    <div class="container split">
+      <div class="reveal">
+        <p class="eyebrow">The problem</p>
+        <h2 id="problem-title">A fixed threshold only sees the problem after it happens.</h2>
+        <p class="lead">Manual or fixed-threshold dosing reacts too late. Action comes once values leave the band; fertiliser and water are wasted and roots get stressed.</p>
+        <p class="muted"><span class="aigro"><span class="ai">AI</span>gro</span> reverses this loop: it forecasts where pH and EC are heading and chooses the smallest dose needed to hold the band.</p>
+      </div>
+      <figure class="media tall reveal reveal-d1">
+        <img src="https://images.unsplash.com/photo-1703589535874-4fbb03d93479?auto=format&fit=crop&q=72&w=1200" srcset="https://images.unsplash.com/photo-1703589535874-4fbb03d93479?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1703589535874-4fbb03d93479?auto=format&fit=crop&q=72&w=960 960w, https://images.unsplash.com/photo-1703589535874-4fbb03d93479?auto=format&fit=crop&q=72&w=1400 1400w, https://images.unsplash.com/photo-1703589535874-4fbb03d93479?auto=format&fit=crop&q=72&w=2000 2000w" sizes="(max-width: 960px) 100vw, 45vw" alt="Tomatoes grown soilless in a greenhouse" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="dongu" aria-labelledby="loop-title">
+    <div class="container split">
+      <div class="reveal">
+        <svg class="loop-diagram" viewBox="0 0 520 520" role="img" aria-labelledby="loop-svg-title">
+          <title id="loop-svg-title">Closed loop: measure, forecast, verify, dose and measure again</title>
+          <defs>
+            <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00BFA5"/><stop offset="1" stop-color="#247CFF"/></linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#247CFF"/></marker>
+          </defs>
+          <circle cx="260" cy="260" r="186" fill="none" stroke="url(#ring)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+          <path d="M330 92 A186 186 0 0 1 428 190" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M428 330 A186 186 0 0 1 330 428" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M190 428 A186 186 0 0 1 92 330" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M92 190 A186 186 0 0 1 190 92" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <circle cx="260" cy="260" r="92" fill="#14243C"/>
+          <text x="260" y="250" text-anchor="middle" fill="#6FE3D2" font-size="13" font-weight="700" letter-spacing="2">CLOSED</text>
+          <text x="260" y="276" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Loop</text>
+          <g font-weight="700" text-anchor="middle">
+            <circle cx="260" cy="74" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="260" y="66" font-size="12" fill="#00796B">01</text><text x="260" y="88" font-size="17" fill="#14243C">Measure</text>
+            <circle cx="446" cy="260" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="446" y="252" font-size="12" fill="#00796B">02</text><text x="446" y="274" font-size="17" fill="#14243C">Forecast</text>
+            <circle cx="260" cy="446" r="54" fill="#7B204F"/>
+            <text x="260" y="438" font-size="12" fill="#E9A9C8">03</text><text x="260" y="460" font-size="17" fill="#fff">Verify</text>
+            <circle cx="74" cy="260" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="74" y="252" font-size="12" fill="#00796B">04</text><text x="74" y="274" font-size="17" fill="#14243C">Dose</text>
+          </g>
+        </svg>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="eyebrow">How it works</p>
+        <h2 id="loop-title">Measure, forecast, verify, dose</h2>
+        <p class="lead">The loop is closed: after every dose the system measures again and bases its next decision on the result.</p>
+        <ul class="checklist">
+          <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>01 · Measure</strong><span class="d">pH, EC, water temperature and tank level</span></div></li>
+          <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>02 · Forecast</strong><span class="d">AI predicts where pH/EC are heading and picks the smallest dose</span></div></li>
+          <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>03 · Verify</strong><span class="d">The controller board checks every command against safety limits</span></div></li>
+          <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>04 · Dose</strong><span class="d">3 channels: Nutrient A · Nutrient B · pH adjuster</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark on-dark" aria-labelledby="safety-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Safe autonomy</p>
+        <h2 id="safety-title">AI recommends, the safety layer decides.</h2>
+        <p class="lead">The AI never drives the pump directly. Every dosing command passes through an independent safety layer on the controller board.</p>
+      </div>
+      <div class="features">
+        <article class="feature reveal"><div class="ic"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg></div><h3>Safety envelope</h3><p>Commands are checked against limits defined on the board; a command that exceeds them is not executed.</p></article>
+        <article class="feature reveal reveal-d1"><div class="ic"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-home"/></svg></div><h3>Works even offline</h3><p>If the connection drops, the system keeps running locally.</p></article>
+        <article class="feature reveal reveal-d2"><div class="ic"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"/></svg></div><h3>Explainable decisions</h3><p>The dashboard logs every dose by channel and amount and explains why it was given in plain language.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="panel-title">
+    <div class="container">
+      <div class="section-head-split">
+        <div class="section-head reveal">
+          <p class="eyebrow"><span class="aigro"><span class="ai">AI</span>gro</span> dashboard</p>
+          <h2 id="panel-title">Operators see the reason behind every decision</h2>
+          <p class="lead">Live pH and EC with the target band, a log of every dosing command and why the system recommended that dose, all on one screen.</p>
+        </div>
+        <span class="disclaimer-inline reveal"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg> Dashboard design · values are sample data</span>
+      </div>
+      <div class="browser reveal">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url"><span class="aigro"><span class="ai">AI</span>gro</span> · Dosing · Overview</span></div>
+        <img src="../assets/img/dozaj-panel.webp" alt="AIgro dosing dashboard design (Turkish interface): live pH 5.82 and EC 2.35, 24-hour trends with target bands, dosing command log, explainable decision panel (sample data)" width="1672" height="941" loading="lazy">
+      </div>
+      <div class="features mt-3">
+        <article class="feature reveal"><div class="ic teal"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"/></svg></div><h3>Live pH / EC</h3><p>Target band and the last 24 hours of trend.</p></article>
+        <article class="feature reveal reveal-d1"><div class="ic teal"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-doc"/></svg></div><h3>Dosing log</h3><p>Every command with its time, channel and amount.</p></article>
+        <article class="feature reveal reveal-d2"><div class="ic teal"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-spark"/></svg></div><h3>Decision rationale</h3><p>Why this dose was given, in plain language.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" aria-labelledby="kpi-title">
+    <div class="container">
+      <div class="kpi-band on-dark reveal">
+        <p class="eyebrow">Target outcomes</p>
+        <h2 id="kpi-title">pH and EC in band, resources under control</h2>
+        <ul class="kpis">
+          <li><span class="val">25–35%</span><span class="lbl">less water</span></li>
+          <li><span class="val">20–30%</span><span class="lbl">less fertiliser</span></li>
+          <li><span class="val">50%+</span><span class="lbl">less manual intervention</span></li>
+          <li><span class="val">15–25%</span><span class="lbl">higher yield</span></li>
+        </ul>
+        <p class="kpi-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><span>These figures are literature-based <strong>targets</strong>, not guarantees. They are measured in your greenhouse and reported as they are.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pilot-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pilot process</p>
+        <h2 id="pilot-title">Let's start by measuring in your greenhouse</h2>
+        <p class="lead">The pilot runs on one line. Targets are measured in your greenhouse and the results are shared transparently, whatever they turn out to be.</p>
+      </div>
+      <ol class="process">
+        <li class="reveal"><h3>Visit</h3><p>We visit your greenhouse and review your current dosing routine together.</p></li>
+        <li class="reveal reveal-d1"><h3>Line selection</h3><p>We agree on the right line and target bands for the pilot.</p></li>
+        <li class="reveal reveal-d2"><h3>Install and measure</h3><p>Sensors, board and dosing channels are installed and monitored together on the dashboard.</p></li>
+        <li class="reveal reveal-d3"><h3>Transparent report</h3><p>Water, fertiliser and intervention data are measured and reported as they are.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section bg-paper" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">Frequently asked questions</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Does the AI run the pump directly? <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary>
+          <div class="answer"><p>No. The AI recommends a dose; the command does not reach the pump without passing the independent safety layer on the controller board.</p></div>
+        </details>
+        <details>
+          <summary>What happens if the internet goes down? <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary>
+          <div class="answer"><p>The system keeps running locally. Where there is no internet, the board can also connect over SIM-based mobile data.</p></div>
+        </details>
+        <details>
+          <summary>What is measured? <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary>
+          <div class="answer"><p>pH, EC, water temperature and tank level. Dosing runs on three channels: Nutrient A, Nutrient B and pH adjuster.</p></div>
+        </details>
+        <details>
+          <summary>Are the savings figures guaranteed? <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary>
+          <div class="answer"><p>No. They are literature-based targets. In a pilot they are measured in your greenhouse and reported exactly as they turn out.</p></div>
+        </details>
+        <details>
+          <summary>How does a pilot start? <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plus"/></svg></summary>
+          <div class="answer"><p>The first step is to visit your greenhouse and choose the right line together. You can request a meeting on the <a href="contact.html">contact page</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-band on-dark reveal">
+        <img src="https://images.unsplash.com/photo-1775681150283-04970adf1b98?auto=format&fit=crop&q=72&w=1600" srcset="https://images.unsplash.com/photo-1775681150283-04970adf1b98?auto=format&fit=crop&q=72&w=640 640w, https://images.unsplash.com/photo-1775681150283-04970adf1b98?auto=format&fit=crop&q=72&w=960 960w, https://images.unsplash.com/photo-1775681150283-04970adf1b98?auto=format&fit=crop&q=72&w=1400 1400w, https://images.unsplash.com/photo-1775681150283-04970adf1b98?auto=format&fit=crop&q=72&w=2000 2000w" sizes="100vw" alt="" loading="lazy">
+        <div>
+          <h2 id="cta-title">Let's trial it on one line.</h2>
+          <p>We'll visit your greenhouse and choose the right line for a pilot together.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="contact.html">Book a pilot call <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+<section class="refs-bar" aria-labelledby="refs-title">
+  <div class="container refs-head">
+    <h2 id="refs-title">References</h2>
+  </div>
+  <div class="marquee" role="region" aria-label="Reference companies">
+    <div class="marquee-track">
+      <ul class="marquee-list">
+        <li class="logo-tile"><img src="../assets/img/ref/harves.png" alt="Harves Technology" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+        <li class="logo-tile"><img src="../assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+      </ul>
+      <ul class="marquee-list" aria-hidden="true">
+        <li class="logo-tile"><img src="../assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+        <li class="logo-tile"><img src="../assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="11" fill="url(#bm)"/><path d="M20 8.5c-5 6.4-8 10.6-8 14.6a8 8 0 0 0 16 0c0-4-3-8.2-8-14.6z" fill="#fff"/><path d="M16.2 25.5c2.6-.2 5.6-2.2 6.6-6.2" fill="none" stroke="#00A58E" stroke-width="2" stroke-linecap="round"/></svg><span class="wordmark aigro"><span class="ai">AI</span>gro</span></span>
+        <p><span class="aigro"><span class="ai">AI</span>gro</span> builds end-to-end smart systems for soilless farming and water management, from sensor to dashboard. Sensors, controller board, software and installation from one team.</p>
+      </div>
+      <div>
+        <h2>Solutions</h2>
+        <ul>
+          <li><a href="smart-dosing.html">Smart Nutrient Dosing</a></li>
+          <li><a href="water-monitoring.html">Water Monitoring System</a></li>
+          <li><a href="vertical-farming.html">Vertical Farming Module</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Company</h2>
+        <ul>
+          <li><a href="index.html#platform">Platform</a></li>
+          <li><a href="index.html#saha">In the field</a></li>
+          <li><a href="index.html#hakkimizda">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:muhammed.kurdas@aksiyomtech.com">muhammed.kurdas@aksiyomtech.com</a></li>
+          <li><a href="../akilli-dozajlama.html" hreflang="tr" lang="tr">Türkçe sürüm</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> <span class="aigro"><span class="ai">AI</span>gro</span>. All rights reserved.</p>
+      <p>Target figures are based on the literature and are not guaranteed. Dashboard and concept visuals are labelled as such. Greenhouse mood photos are illustrative (Unsplash licence).</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

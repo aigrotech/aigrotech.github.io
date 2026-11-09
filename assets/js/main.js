@@ -2,6 +2,12 @@
 (() => {
   "use strict";
   document.documentElement.classList.add("js");
+  const EN = document.documentElement.lang === "en";
+  const T = EN
+    ? { open: "Open menu", close: "Close menu", subject: "AIgro meeting request", name: "Name", org: "Organisation", email: "E-mail", topic: "Interest",
+        sent: (to) => `Your e-mail app opened with the message ready. Press “Send” in your e-mail app. If nothing opened, write to us directly at ${to}.` }
+    : { open: "Menüyü aç", close: "Menüyü kapat", subject: "AIgro görüşme talebi", name: "Ad Soyad", org: "Kurum", email: "E-posta", topic: "İlgi alanı",
+        sent: (to) => `E-posta uygulamanız mesaj hazır olarak açıldı. Göndermek için e-posta uygulamanızda “Gönder”e basın. Uygulama açılmadıysa bize doğrudan ${to} adresinden yazabilirsiniz.` };
 
   const header = document.querySelector(".site-header");
   const nav = document.getElementById("site-nav");
@@ -49,7 +55,7 @@
   const setMenu = (open) => {
     if (!toggle || !nav) return;
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.querySelector(".sr-only").textContent = open ? "Menüyü kapat" : "Menüyü aç";
+    toggle.querySelector(".sr-only").textContent = open ? T.close : T.open;
     nav.classList.toggle("open", open);
     header.classList.toggle("menu-open", open);
     document.body.classList.toggle("no-scroll", open);
@@ -114,10 +120,10 @@
       });
       if (!ok) return;
       const v = (n) => (form.elements[n]?.value || "").trim();
-      const subject = `AIgro görüşme talebi – ${v("konu")}`;
-      const body = [`Ad Soyad: ${v("ad")}`, `Kurum: ${v("kurum") || "-"}`, `E-posta: ${v("eposta")}`, `İlgi alanı: ${v("konu")}`, "", v("mesaj")].join("\n");
+      const subject = `${T.subject} – ${v("konu")}`;
+      const body = [`${T.name}: ${v("ad")}`, `${T.org}: ${v("kurum") || "-"}`, `${T.email}: ${v("eposta")}`, `${T.topic}: ${v("konu")}`, "", v("mesaj")].join("\n");
       window.location.href = `mailto:${form.dataset.to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.textContent = "E-posta uygulamanız mesaj hazır olarak açıldı. Göndermek için e-posta uygulamanızda “Gönder”e basın. Uygulama açılmadıysa bize doğrudan " + form.dataset.to + " adresinden yazabilirsiniz.";
+      status.textContent = T.sent(form.dataset.to);
       status.classList.add("show");
     });
   }

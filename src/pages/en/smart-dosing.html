@@ -1,0 +1,204 @@
+title: Smart Nutrient Dosing | AIgro
+description: AIgro Smart Nutrient Dosing forecasts pH and EC in soilless greenhouses, explains each decision and checks every command against an independent safety layer on the controller board.
+header: overlay
+og_image: assets/img/og-cover-en.jpg
+active: dozaj
+---
+<main id="main">
+
+  <section class="page-hero on-dark" aria-labelledby="page-title">
+    <div class="hero-media"><img src="[[U 1667509860948-46d20f127b43 2000]]" srcset="[[S 1667509860948-46d20f127b43]]" sizes="100vw" alt="" fetchpriority="high"></div>
+    <div class="container">
+      <ol class="breadcrumb" aria-label="Breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#cozumler">Solutions</a></li>
+        <li aria-current="page">Smart Nutrient Dosing</li>
+      </ol>
+      <span class="chip chip-pilot">Pilot stage</span>
+      <h1 id="page-title">Smart Nutrient Dosing</h1>
+      <p class="lead">Safe autonomous dosing for soilless greenhouses that forecasts pH and EC and explains its decisions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="contact.html">Discuss a pilot [[I arrow icon icon-arrow]]</a>
+        <a class="btn btn-ghost-light" href="#dongu">How it works</a>
+      </div>
+      <ul class="key-facts">
+        <li>[[I flask]] 3 dosing channels</li>
+        <li>[[I shield]] Safety layer on the board</li>
+        <li>[[I home]] Works locally offline</li>
+        <li>[[I doc]] Every dose logged</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="problem-title">
+    <div class="container split">
+      <div class="reveal">
+        <p class="eyebrow">The problem</p>
+        <h2 id="problem-title">A fixed threshold only sees the problem after it happens.</h2>
+        <p class="lead">Manual or fixed-threshold dosing reacts too late. Action comes once values leave the band; fertiliser and water are wasted and roots get stressed.</p>
+        <p class="muted">AIgro reverses this loop: it forecasts where pH and EC are heading and chooses the smallest dose needed to hold the band.</p>
+      </div>
+      <figure class="media tall reveal reveal-d1">
+        <img src="[[U 1703589535874-4fbb03d93479 1200]]" srcset="[[S 1703589535874-4fbb03d93479]]" sizes="(max-width: 960px) 100vw, 45vw" alt="Tomatoes grown soilless in a greenhouse" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section bg-paper" id="dongu" aria-labelledby="loop-title">
+    <div class="container split">
+      <div class="reveal">
+        <svg class="loop-diagram" viewBox="0 0 520 520" role="img" aria-labelledby="loop-svg-title">
+          <title id="loop-svg-title">Closed loop: measure, forecast, verify, dose and measure again</title>
+          <defs>
+            <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00BFA5"/><stop offset="1" stop-color="#247CFF"/></linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#247CFF"/></marker>
+          </defs>
+          <circle cx="260" cy="260" r="186" fill="none" stroke="url(#ring)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+          <path d="M330 92 A186 186 0 0 1 428 190" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M428 330 A186 186 0 0 1 330 428" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M190 428 A186 186 0 0 1 92 330" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M92 190 A186 186 0 0 1 190 92" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <circle cx="260" cy="260" r="92" fill="#14243C"/>
+          <text x="260" y="250" text-anchor="middle" fill="#6FE3D2" font-size="13" font-weight="700" letter-spacing="2">CLOSED</text>
+          <text x="260" y="276" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Loop</text>
+          <g font-weight="700" text-anchor="middle">
+            <circle cx="260" cy="74" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="260" y="66" font-size="12" fill="#00796B">01</text><text x="260" y="88" font-size="17" fill="#14243C">Measure</text>
+            <circle cx="446" cy="260" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="446" y="252" font-size="12" fill="#00796B">02</text><text x="446" y="274" font-size="17" fill="#14243C">Forecast</text>
+            <circle cx="260" cy="446" r="54" fill="#7B204F"/>
+            <text x="260" y="438" font-size="12" fill="#E9A9C8">03</text><text x="260" y="460" font-size="17" fill="#fff">Verify</text>
+            <circle cx="74" cy="260" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="74" y="252" font-size="12" fill="#00796B">04</text><text x="74" y="274" font-size="17" fill="#14243C">Dose</text>
+          </g>
+        </svg>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="eyebrow">How it works</p>
+        <h2 id="loop-title">Measure, forecast, verify, dose</h2>
+        <p class="lead">The loop is closed: after every dose the system measures again and bases its next decision on the result.</p>
+        <ul class="checklist">
+          <li><span class="tick">[[I check]]</span><div><strong>01 · Measure</strong><span class="d">pH, EC, water temperature and tank level</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>02 · Forecast</strong><span class="d">AI predicts where pH/EC are heading and picks the smallest dose</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>03 · Verify</strong><span class="d">The controller board checks every command against safety limits</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>04 · Dose</strong><span class="d">3 channels: Nutrient A · Nutrient B · pH adjuster</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-dark on-dark" aria-labelledby="safety-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Safe autonomy</p>
+        <h2 id="safety-title">AI recommends, the safety layer decides.</h2>
+        <p class="lead">The AI never drives the pump directly. Every dosing command passes through an independent safety layer on the controller board.</p>
+      </div>
+      <div class="features">
+        <article class="feature reveal"><div class="ic">[[I shield]]</div><h3>Safety envelope</h3><p>Commands are checked against limits defined on the board; a command that exceeds them is not executed.</p></article>
+        <article class="feature reveal reveal-d1"><div class="ic">[[I home]]</div><h3>Works even offline</h3><p>If the connection drops, the system keeps running locally.</p></article>
+        <article class="feature reveal reveal-d2"><div class="ic">[[I eye]]</div><h3>Explainable decisions</h3><p>The dashboard logs every dose by channel and amount and explains why it was given in plain language.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="panel-title">
+    <div class="container">
+      <div class="section-head-split">
+        <div class="section-head reveal">
+          <p class="eyebrow">AIgro dashboard</p>
+          <h2 id="panel-title">Operators see the reason behind every decision</h2>
+          <p class="lead">Live pH and EC with the target band, a log of every dosing command and why the system recommended that dose, all on one screen.</p>
+        </div>
+        <span class="disclaimer-inline reveal">[[I info]] Dashboard design · values are sample data</span>
+      </div>
+      <div class="browser reveal">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">AIgro · Dosing · Overview</span></div>
+        <img src="assets/img/dozaj-panel.webp" alt="AIgro dosing dashboard design (Turkish interface): live pH 5.82 and EC 2.35, 24-hour trends with target bands, dosing command log, explainable decision panel (sample data)" width="1672" height="941" loading="lazy">
+      </div>
+      <div class="features mt-3">
+        <article class="feature reveal"><div class="ic teal">[[I chart]]</div><h3>Live pH / EC</h3><p>Target band and the last 24 hours of trend.</p></article>
+        <article class="feature reveal reveal-d1"><div class="ic teal">[[I doc]]</div><h3>Dosing log</h3><p>Every command with its time, channel and amount.</p></article>
+        <article class="feature reveal reveal-d2"><div class="ic teal">[[I spark]]</div><h3>Decision rationale</h3><p>Why this dose was given, in plain language.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" aria-labelledby="kpi-title">
+    <div class="container">
+      <div class="kpi-band on-dark reveal">
+        <p class="eyebrow">Target outcomes</p>
+        <h2 id="kpi-title">pH and EC in band, resources under control</h2>
+        <ul class="kpis">
+          <li><span class="val">25–35%</span><span class="lbl">less water</span></li>
+          <li><span class="val">20–30%</span><span class="lbl">less fertiliser</span></li>
+          <li><span class="val">50%+</span><span class="lbl">less manual intervention</span></li>
+          <li><span class="val">15–25%</span><span class="lbl">higher yield</span></li>
+        </ul>
+        <p class="kpi-note">[[I info]]<span>These figures are literature-based <strong>targets</strong>, not guarantees. They are measured in your greenhouse and reported as they are.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pilot-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pilot process</p>
+        <h2 id="pilot-title">Let's start by measuring in your greenhouse</h2>
+        <p class="lead">The pilot runs on one line. Targets are measured in your greenhouse and the results are shared transparently, whatever they turn out to be.</p>
+      </div>
+      <ol class="process">
+        <li class="reveal"><h3>Visit</h3><p>We visit your greenhouse and review your current dosing routine together.</p></li>
+        <li class="reveal reveal-d1"><h3>Line selection</h3><p>We agree on the right line and target bands for the pilot.</p></li>
+        <li class="reveal reveal-d2"><h3>Install and measure</h3><p>Sensors, board and dosing channels are installed and monitored together on the dashboard.</p></li>
+        <li class="reveal reveal-d3"><h3>Transparent report</h3><p>Water, fertiliser and intervention data are measured and reported as they are.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section bg-paper" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">Frequently asked questions</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Does the AI run the pump directly? [[I plus]]</summary>
+          <div class="answer"><p>No. The AI recommends a dose; the command does not reach the pump without passing the independent safety layer on the controller board.</p></div>
+        </details>
+        <details>
+          <summary>What happens if the internet goes down? [[I plus]]</summary>
+          <div class="answer"><p>The system keeps running locally. Where there is no internet, the board can also connect over SIM-based mobile data.</p></div>
+        </details>
+        <details>
+          <summary>What is measured? [[I plus]]</summary>
+          <div class="answer"><p>pH, EC, water temperature and tank level. Dosing runs on three channels: Nutrient A, Nutrient B and pH adjuster.</p></div>
+        </details>
+        <details>
+          <summary>Are the savings figures guaranteed? [[I plus]]</summary>
+          <div class="answer"><p>No. They are literature-based targets. In a pilot they are measured in your greenhouse and reported exactly as they turn out.</p></div>
+        </details>
+        <details>
+          <summary>How does a pilot start? [[I plus]]</summary>
+          <div class="answer"><p>The first step is to visit your greenhouse and choose the right line together. You can request a meeting on the <a href="contact.html">contact page</a>.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-band on-dark reveal">
+        <img src="[[U 1775681150283-04970adf1b98 1600]]" srcset="[[S 1775681150283-04970adf1b98]]" sizes="100vw" alt="" loading="lazy">
+        <div>
+          <h2 id="cta-title">Let's trial it on one line.</h2>
+          <p>We'll visit your greenhouse and choose the right line for a pilot together.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="contact.html">Book a pilot call [[I arrow icon icon-arrow]]</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

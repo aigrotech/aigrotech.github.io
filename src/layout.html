@@ -1,15 +1,16 @@
 <!doctype html>
-<html lang="tr">
+<html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{title}}</title>
   <meta name="description" content="{{description}}">
   <link rel="canonical" href="{{canonical}}">
+  {{hreflang}}
   <meta name="theme-color" content="#0C1A2E">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="tr_TR">
-  <meta property="og:site_name" content="AIgro · AKSİYOM">
+  <meta property="og:locale" content="{{og_locale}}">
+  <meta property="og:site_name" content="AIgro">
   <meta property="og:title" content="{{title}}">
   <meta property="og:description" content="{{description}}">
   <meta property="og:url" content="{{canonical}}">
@@ -27,88 +28,122 @@
 </head>
 <body>
 {{sprite}}
-<a class="skip-link" href="#main">İçeriğe geç</a>
+<a class="skip-link" href="#main">{{t:skip}}</a>
 
 <header class="site-header {{header_class}}">
   <div class="container bar">
-    <a class="brand" href="index.html" aria-label="AIgro ana sayfa">
-      <img class="brand-logo dark" src="assets/img/aksiyom-logo.png" alt="AKSİYOM" width="726" height="142">
-      <img class="brand-logo light" src="assets/img/aksiyom-logo-light.png" alt="" width="726" height="142">
-      <span class="brand-divider" aria-hidden="true"></span>
+    <a class="brand" href="{{href:index}}" aria-label="{{t:home_label}}">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00BFA5"/><stop offset="1" stop-color="#247CFF"/></linearGradient></defs>
+        <rect width="40" height="40" rx="11" fill="url(#bm)"/>
+        <path d="M20 8.5c-5 6.4-8 10.6-8 14.6a8 8 0 0 0 16 0c0-4-3-8.2-8-14.6z" fill="#fff"/>
+        <path d="M16.2 25.5c2.6-.2 5.6-2.2 6.6-6.2" fill="none" stroke="#00A58E" stroke-width="2" stroke-linecap="round"/>
+      </svg>
       <span class="wordmark aigro"><span class="ai">AI</span>gro</span>
     </a>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-      <span class="sr-only">Menüyü aç</span><span class="bars" aria-hidden="true"></span>
+      <span class="sr-only">{{t:menu_open}}</span><span class="bars" aria-hidden="true"></span>
     </button>
 
-    <nav class="nav" id="site-nav" aria-label="Ana menü">
+    <nav class="nav" id="site-nav" aria-label="{{t:nav_label}}">
       <ul class="nav-list">
         <li class="has-dropdown">
           <button class="nav-link" type="button" data-dropdown aria-expanded="false" aria-controls="dd-solutions"{{cur_cozum}}>
-            Çözümler [[I chev chev]]
+            {{t:solutions}} [[I chev chev]]
           </button>
           <div class="dropdown" id="dd-solutions">
-            <a href="akilli-dozajlama.html"{{cur_dozaj}}>
+            <a href="{{href:dozaj}}"{{cur:dozaj}}>
               <span class="dd-icon">[[I flask]]</span>
-              <span><strong>Akıllı Besin Dozajlama <span class="chip chip-pilot">Pilot</span></strong><span class="desc">pH ve EC'yi öngören, güvenlik sınırlı otonom dozaj</span></span>
+              <span><strong>{{t:dozaj_title}} <span class="chip chip-pilot">{{t:dozaj_chip}}</span></strong><span class="desc">{{t:dozaj_desc}}</span></span>
             </a>
-            <a href="su-takibi.html"{{cur_su}}>
+            <a href="{{href:su}}"{{cur:su}}>
               <span class="dd-icon">[[I drop]]</span>
-              <span><strong>Su Takip Sistemi <span class="chip chip-live">Sahada</span></strong><span class="desc">Depo seviyesi, sıcaklık, bulanıklık ve alarm</span></span>
+              <span><strong>{{t:su_title}} <span class="chip chip-live">{{t:su_chip}}</span></strong><span class="desc">{{t:su_desc}}</span></span>
             </a>
-            <a href="dikey-tarim.html"{{cur_dikey}}>
+            <a href="{{href:dikey}}"{{cur:dikey}}>
               <span class="dd-icon">[[I shelves]]</span>
-              <span><strong>Dikey Tarım Modülü <span class="chip chip-rnd">Ar-Ge</span></strong><span class="desc">Kafe ve restoranlar için yerinde yetiştirme</span></span>
+              <span><strong>{{t:dikey_title}} <span class="chip chip-rnd">{{t:dikey_chip}}</span></strong><span class="desc">{{t:dikey_desc}}</span></span>
             </a>
           </div>
         </li>
-        <li><a class="nav-link" href="index.html#platform">Platform</a></li>
-        <li><a class="nav-link" href="index.html#saha">Sahadan</a></li>
-        <li><a class="nav-link" href="index.html#hakkimizda">Hakkımızda</a></li>
+        <li><a class="nav-link" href="{{href:index}}#platform">{{t:platform}}</a></li>
+        <li><a class="nav-link" href="{{href:index}}#saha">{{t:field}}</a></li>
+        <li><a class="nav-link" href="{{href:index}}#hakkimizda">{{t:about}}</a></li>
+        <li><a class="nav-link lang-switch" href="{{other_href}}" hreflang="{{other_lang}}" lang="{{other_lang}}" aria-label="{{t:lang_switch_label}}">[[I globe]] {{t:lang_switch}}</a></li>
       </ul>
-      <a class="btn btn-primary btn-sm nav-cta" href="iletisim.html"{{cur_iletisim}}>Görüşme planlayın [[I arrow icon icon-arrow]]</a>
+      <a class="btn btn-primary btn-sm nav-cta" href="{{href:iletisim}}"{{cur:iletisim}}>{{t:cta}} [[I arrow icon icon-arrow]]</a>
     </nav>
   </div>
 </header>
 
 {{body}}
 
+<section class="refs-bar" aria-labelledby="refs-title">
+  <div class="container refs-head">
+    <h2 id="refs-title">{{t:refs_title}}</h2>
+  </div>
+  <div class="marquee" role="region" aria-label="{{t:refs_label}}">
+    <div class="marquee-track">
+      <ul class="marquee-list">
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="Harves Technology" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+      </ul>
+      <ul class="marquee-list" aria-hidden="true">
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer on-dark">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/img/aksiyom-logo-light.png" alt="AKSİYOM İleri Teknoloji ve Ar-Ge" width="726" height="142" loading="lazy">
-        <p><span class="aigro"><span class="ai">AI</span>gro</span>, AKSİYOM İleri Teknoloji ve Ar-Ge'nin topraksız tarım ve su yönetimi çözümleridir. Sensör, kontrol kartı, yazılım ve kurulum aynı ekipten.</p>
+        <span class="footer-logo"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="11" fill="url(#bm)"/><path d="M20 8.5c-5 6.4-8 10.6-8 14.6a8 8 0 0 0 16 0c0-4-3-8.2-8-14.6z" fill="#fff"/><path d="M16.2 25.5c2.6-.2 5.6-2.2 6.6-6.2" fill="none" stroke="#00A58E" stroke-width="2" stroke-linecap="round"/></svg><span class="wordmark aigro"><span class="ai">AI</span>gro</span></span>
+        <p>{{t:footer_about}}</p>
       </div>
       <div>
-        <h2>Çözümler</h2>
+        <h2>{{t:footer_solutions}}</h2>
         <ul>
-          <li><a href="akilli-dozajlama.html">Akıllı Besin Dozajlama</a></li>
-          <li><a href="su-takibi.html">Su Takip Sistemi</a></li>
-          <li><a href="dikey-tarim.html">Dikey Tarım Modülü</a></li>
+          <li><a href="{{href:dozaj}}">{{t:dozaj_title}}</a></li>
+          <li><a href="{{href:su}}">{{t:su_title}}</a></li>
+          <li><a href="{{href:dikey}}">{{t:dikey_title}}</a></li>
         </ul>
       </div>
       <div>
-        <h2>Kurumsal</h2>
+        <h2>{{t:footer_company}}</h2>
         <ul>
-          <li><a href="index.html#platform">Platform</a></li>
-          <li><a href="index.html#saha">Sahadan</a></li>
-          <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
-          <li><a href="iletisim.html">İletişim</a></li>
+          <li><a href="{{href:index}}#platform">{{t:platform}}</a></li>
+          <li><a href="{{href:index}}#saha">{{t:field}}</a></li>
+          <li><a href="{{href:index}}#hakkimizda">{{t:about}}</a></li>
+          <li><a href="{{href:iletisim}}">{{t:contact}}</a></li>
         </ul>
       </div>
       <div>
-        <h2>İletişim</h2>
+        <h2>{{t:footer_contact}}</h2>
         <ul>
-          <li><a href="mailto:muhammed.kurdas@aksiyomtech.com">muhammed.kurdas@aksiyomtech.com</a></li>
-          <li><a href="https://aksiyomtech.com" rel="noopener">aksiyomtech.com</a></li>
+          <li><a href="mailto:{{email}}">{{email}}</a></li>
+          <li><a href="{{other_href}}" hreflang="{{other_lang}}" lang="{{other_lang}}">{{t:lang_switch_label}}</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="year">2026</span> AKSİYOM İleri Teknoloji ve Ar-Ge. Tüm hakları saklıdır.</p>
-      <p>Hedef oranlar literatüre dayalıdır, garanti değildir. Panel ve konsept görselleri üzerinde belirtilmiştir. Sera atmosfer fotoğrafları temsilidir (Unsplash lisansı).</p>
+      <p>© <span id="year">2026</span> AIgro. {{t:rights}}</p>
+      <p>{{t:footer_note}}</p>
     </div>
   </div>
 </footer>

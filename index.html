@@ -4,14 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AIgro | Topraksız Tarımda Akıllı Dozajlama, Su Takibi ve Dikey Tarım</title>
-  <meta name="description" content="AKSİYOM'un AIgro çözümleri: topraksız serada pH ve EC'yi öngören akıllı besin dozajlama, sahada çalışan su takip sistemi ve kafe-restoranlar için dikey tarım modülü.">
+  <meta name="description" content="AIgro çözümleri: topraksız serada pH ve EC'yi öngören akıllı besin dozajlama, sahada çalışan su takip sistemi ve kafe-restoranlar için dikey tarım modülü.">
   <link rel="canonical" href="https://tarikyil.github.io/aigro-web/">
+  <link rel="alternate" hreflang="tr" href="https://tarikyil.github.io/aigro-web/">
+  <link rel="alternate" hreflang="en" href="https://tarikyil.github.io/aigro-web/en/">
+  <link rel="alternate" hreflang="x-default" href="https://tarikyil.github.io/aigro-web/">
   <meta name="theme-color" content="#0C1A2E">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="tr_TR">
-  <meta property="og:site_name" content="AIgro · AKSİYOM">
+  <meta property="og:site_name" content="AIgro">
   <meta property="og:title" content="AIgro | Topraksız Tarımda Akıllı Dozajlama, Su Takibi ve Dikey Tarım">
-  <meta property="og:description" content="AKSİYOM'un AIgro çözümleri: topraksız serada pH ve EC'yi öngören akıllı besin dozajlama, sahada çalışan su takip sistemi ve kafe-restoranlar için dikey tarım modülü.">
+  <meta property="og:description" content="AIgro çözümleri: topraksız serada pH ve EC'yi öngören akıllı besin dozajlama, sahada çalışan su takip sistemi ve kafe-restoranlar için dikey tarım modülü.">
   <meta property="og:url" content="https://tarikyil.github.io/aigro-web/">
   <meta property="og:image" content="https://tarikyil.github.io/aigro-web/assets/img/og-cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -73,9 +76,12 @@
 <header class="site-header is-overlay">
   <div class="container bar">
     <a class="brand" href="index.html" aria-label="AIgro ana sayfa">
-      <img class="brand-logo dark" src="assets/img/aksiyom-logo.png" alt="AKSİYOM" width="726" height="142">
-      <img class="brand-logo light" src="assets/img/aksiyom-logo-light.png" alt="" width="726" height="142">
-      <span class="brand-divider" aria-hidden="true"></span>
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00BFA5"/><stop offset="1" stop-color="#247CFF"/></linearGradient></defs>
+        <rect width="40" height="40" rx="11" fill="url(#bm)"/>
+        <path d="M20 8.5c-5 6.4-8 10.6-8 14.6a8 8 0 0 0 16 0c0-4-3-8.2-8-14.6z" fill="#fff"/>
+        <path d="M16.2 25.5c2.6-.2 5.6-2.2 6.6-6.2" fill="none" stroke="#00A58E" stroke-width="2" stroke-linecap="round"/>
+      </svg>
       <span class="wordmark aigro"><span class="ai">AI</span>gro</span>
     </a>
 
@@ -107,6 +113,7 @@
         <li><a class="nav-link" href="index.html#platform">Platform</a></li>
         <li><a class="nav-link" href="index.html#saha">Sahadan</a></li>
         <li><a class="nav-link" href="index.html#hakkimizda">Hakkımızda</a></li>
+        <li><a class="nav-link lang-switch" href="en/index.html" hreflang="en" lang="en" aria-label="English version"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-globe"/></svg> EN</a></li>
       </ul>
       <a class="btn btn-primary btn-sm nav-cta" href="iletisim.html">Görüşme planlayın <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
     </nav>
@@ -134,8 +141,8 @@
     <div class="hero-proof">
       <div class="container">
         <ul>
-          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><div><strong>2 aktif saha</strong><span>Su takip sistemi çalışıyor</span></div></li>
-          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flag"/></svg><div><strong>AB destekli proje</strong><span>OceanBites ile ortaklık</span></div></li>
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg><div><strong>Sahada çalışıyor</strong><span>Su takip sistemi</span></div></li>
+          <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chip"/></svg><div><strong>Kendi kontrol kartımız</strong><span>Donanım ve yazılım bizde</span></div></li>
           <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-flask"/></svg><div><strong>3 kanallı dozaj</strong><span>Besin A · Besin B · pH</span></div></li>
           <li><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-signal"/></svg><div><strong>Wi-Fi veya 4G</strong><span>İnternetsiz arazide SIM ile</span></div></li>
         </ul>
@@ -259,8 +266,8 @@
 
       <div class="split mt-4">
         <figure class="media square product reveal">
-          <img src="assets/img/kontrol-karti.webp" alt="AKSİYOM kontrol kartı: vidalı klemensler ve kablosuz modül bulunan yeşil devre kartı" width="1100" height="1119" loading="lazy">
-          <div class="badge-float"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chip"/></svg><div><strong>AKSİYOM Kontrol Kartı</strong><span>Kendi tasarımımız · sahada çalışıyor</span></div></div>
+          <img src="assets/img/kontrol-karti.webp" alt="AIgro kontrol kartı: vidalı klemensler ve kablosuz modül bulunan yeşil devre kartı" width="1100" height="1119" loading="lazy">
+          <div class="badge-float"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chip"/></svg><div><strong><span class="aigro"><span class="ai">AI</span>gro</span> Kontrol Kartı</strong><span>Kendi tasarımımız · sahada çalışıyor</span></div></div>
         </figure>
         <div class="reveal reveal-d1">
           <p class="eyebrow">Ortak donanım</p>
@@ -351,7 +358,7 @@
       <div class="section-head-split">
         <div class="section-head reveal">
           <p class="eyebrow">Sahadan</p>
-          <h2 id="saha-title">Sistemimiz iki sahada çalışıyor</h2>
+          <h2 id="saha-title">Sistemimiz sahada çalışıyor</h2>
           <p class="lead">Seviye sensörü mevcut deponun üstüne, kontrol panosu yanındaki duvara. Kurulumdan sonra her şey panelden izleniyor.</p>
         </div>
         <a class="link-arrow reveal" href="su-takibi.html">Su takip sistemini inceleyin <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
@@ -360,14 +367,8 @@
       <div class="field-grid reveal">
         <figure class="media"><img src="assets/img/saha-pano.webp" alt="Depo yanındaki duvara monte edilmiş kontrol panoları ve depo üstündeki sensörler" width="960" height="1080" loading="lazy"><figcaption>Kontrol panoları · saha</figcaption></figure>
         <figure class="media"><img src="assets/img/saha-depo.webp" alt="Su deposunun üstüne takılmış turuncu seviye sensörü" width="1100" height="720" loading="lazy"><figcaption>Depo üstünde seviye sensörü</figcaption></figure>
-        <figure class="media product"><img src="assets/img/kontrol-karti.webp" alt="AKSİYOM kontrol kartı" width="1100" height="1119" loading="lazy"><figcaption>AKSİYOM kontrol kartı</figcaption></figure>
+        <figure class="media product"><img src="assets/img/kontrol-karti.webp" alt="AIgro kontrol kartı" width="1100" height="1119" loading="lazy"><figcaption><span class="aigro"><span class="ai">AI</span>gro</span> kontrol kartı</figcaption></figure>
       </div>
-
-      <ul class="refs">
-        <li class="ref reveal"><span class="tag">Sahada</span><strong>AlPolimer</strong><p>Su takip sistemimiz çalışıyor.</p></li>
-        <li class="ref reveal reveal-d1"><span class="tag">Sahada</span><strong>Harves</strong><p>Su takip sistemimiz çalışıyor.</p></li>
-        <li class="ref reveal reveal-d2"><span class="tag eu">Avrupa Birliği projesi</span><strong>OceanBites</strong><p>AB destekli ortak projemiz.</p></li>
-      </ul>
     </div>
   </section>
 
@@ -380,16 +381,16 @@
       </div>
       <div class="reveal reveal-d1">
         <p class="eyebrow">Hakkımızda</p>
-        <h2 id="about-title">AKSİYOM İleri Teknoloji ve Ar-Ge</h2>
-        <p class="lead">Donanımdan yapay zekâya uçtan uca akıllı sistemler geliştiriyoruz. <span class="aigro"><span class="ai">AI</span>gro</span>, bu birikimin topraksız tarım ve su yönetimine odaklanan ürün ailesi.</p>
+        <h2 id="about-title">Sensörden yapay zekâya tek ekip</h2>
+        <p class="lead"><span class="aigro"><span class="ai">AI</span>gro</span>; elektronik, gömülü yazılım, bulut ve yapay zekâ alanında çalışan bir Ar-Ge ekibinin, topraksız tarım ve su yönetimine odaklanan ürün ailesidir.</p>
         <ul class="checklist">
           <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>Uçtan uca ekip</strong><span class="d">Elektronik kart, gömülü yazılım, bulut, yapay zekâ ve saha kurulumu</span></div></li>
-          <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>Sahada kanıt</strong><span class="d">Su takip sistemi iki sahada çalışıyor</span></div></li>
+          <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>Sahada kanıt</strong><span class="d">Su takip sistemi sahada çalışıyor</span></div></li>
           <li><span class="tick"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg></span><div><strong>Şeffaf ölçüm</strong><span class="d">Hedefleri sahada ölçer, sonucu olduğu gibi raporlarız</span></div></li>
         </ul>
         <div class="stack-actions">
           <a class="btn btn-dark" href="iletisim.html">Bizimle çalışın <svg class="icon icon-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-outline" href="https://aksiyomtech.com" rel="noopener">aksiyomtech.com</a>
+          <a class="btn btn-outline" href="#cozumler">Çözümleri inceleyin</a>
         </div>
       </div>
     </div>
@@ -429,12 +430,42 @@
 </main>
 
 
+<section class="refs-bar" aria-labelledby="refs-title">
+  <div class="container refs-head">
+    <h2 id="refs-title">Referanslarımız</h2>
+  </div>
+  <div class="marquee" role="region" aria-label="Referans firmalar">
+    <div class="marquee-track">
+      <ul class="marquee-list">
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="Harves Technology" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+      </ul>
+      <ul class="marquee-list" aria-hidden="true">
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+        <li class="logo-tile"><img src="assets/img/ref/harves.png" alt="" width="613" height="133" loading="lazy"></li>
+        <li class="logo-tile"><span class="logo-word logo-alpolimer">AlPolimer</span></li>
+        <li class="logo-tile"><span class="logo-word logo-ozdogu">Özdoğu</span></li>
+        <li class="logo-tile"><span class="logo-word logo-damper">DAMPER</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer on-dark">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/img/aksiyom-logo-light.png" alt="AKSİYOM İleri Teknoloji ve Ar-Ge" width="726" height="142" loading="lazy">
-        <p><span class="aigro"><span class="ai">AI</span>gro</span>, AKSİYOM İleri Teknoloji ve Ar-Ge'nin topraksız tarım ve su yönetimi çözümleridir. Sensör, kontrol kartı, yazılım ve kurulum aynı ekipten.</p>
+        <span class="footer-logo"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false"><rect width="40" height="40" rx="11" fill="url(#bm)"/><path d="M20 8.5c-5 6.4-8 10.6-8 14.6a8 8 0 0 0 16 0c0-4-3-8.2-8-14.6z" fill="#fff"/><path d="M16.2 25.5c2.6-.2 5.6-2.2 6.6-6.2" fill="none" stroke="#00A58E" stroke-width="2" stroke-linecap="round"/></svg><span class="wordmark aigro"><span class="ai">AI</span>gro</span></span>
+        <p><span class="aigro"><span class="ai">AI</span>gro</span>; topraksız tarım ve su yönetimi için sensörden panele uçtan uca akıllı sistemler. Sensör, kontrol kartı, yazılım ve kurulum aynı ekipten.</p>
       </div>
       <div>
         <h2>Çözümler</h2>
@@ -457,12 +488,12 @@
         <h2>İletişim</h2>
         <ul>
           <li><a href="mailto:muhammed.kurdas@aksiyomtech.com">muhammed.kurdas@aksiyomtech.com</a></li>
-          <li><a href="https://aksiyomtech.com" rel="noopener">aksiyomtech.com</a></li>
+          <li><a href="en/index.html" hreflang="en" lang="en">English version</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© <span id="year">2026</span> AKSİYOM İleri Teknoloji ve Ar-Ge. Tüm hakları saklıdır.</p>
+      <p>© <span id="year">2026</span> <span class="aigro"><span class="ai">AI</span>gro</span>. Tüm hakları saklıdır.</p>
       <p>Hedef oranlar literatüre dayalıdır, garanti değildir. Panel ve konsept görselleri üzerinde belirtilmiştir. Sera atmosfer fotoğrafları temsilidir (Unsplash lisansı).</p>
     </div>
   </div>

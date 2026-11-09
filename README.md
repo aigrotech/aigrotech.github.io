@@ -1,6 +1,6 @@
 # AIgro web sitesi
 
-AKSİYOM İleri Teknoloji ve Ar-Ge'nin AIgro çözümlerini anlatan statik kurumsal site: Akıllı Besin Dozajlama, Su Takip Sistemi ve Dikey Tarım Modülü. Çıktı saf HTML/CSS/JS olduğu için GitHub Pages doğrudan yayınlar.
+AIgro çözümlerini anlatan iki dilli (TR/EN) statik site: Akıllı Besin Dozajlama, Su Takip Sistemi ve Dikey Tarım Modülü. Türkçe sayfalar kökte, İngilizce sayfalar `en/` altında. Çıktı saf HTML/CSS/JS olduğu için GitHub Pages doğrudan yayınlar.
 
 ## Sayfalar
 
@@ -11,6 +11,7 @@ AKSİYOM İleri Teknoloji ve Ar-Ge'nin AIgro çözümlerini anlatan statik kurum
 | `su-takibi.html` | Özellikler, gerçek panel, saha kurulumu, referanslar, SSS |
 | `dikey-tarim.html` | Konsept, modül yapısı ve ölçüler, bitkiler |
 | `iletisim.html` | İletişim; form e-posta uygulamasını açar (sunucuya veri göndermez) |
+| `en/*.html` | İngilizce karşılıklar: `index`, `smart-dosing`, `water-monitoring`, `vertical-farming`, `contact` |
 
 ## Düzenleme
 
@@ -21,11 +22,17 @@ python tools/build.py
 ```
 
 - `src/layout.html` — ortak header, menü, footer
-- `src/pages/*.html` — sayfa içerikleri (üstte başlık/açıklama bilgisi)
+- `src/pages/tr/*.html`, `src/pages/en/*.html` — sayfa içerikleri (üstte başlık/açıklama bilgisi)
+- `tools/build.py` — dil metinleri (`STRINGS`), sayfa adları (`PAGES`) ve **iletişim e-postası (`CONTACT_EMAIL`, tek yerden)**
+- `tools/og_cards.py` — paylaşım önizleme kartlarını yeniden üretir
 - `src/icons.svg` — ikon seti
 - `assets/css/style.css`, `assets/js/main.js` — tasarım sistemi ve davranışlar
 
 Derleme; Unsplash görsel bağlantılarını, ikonları ve "AIgro" yazımını (büyük I'nın "l" gibi okunmaması için) otomatik üretir. Kök dizindeki `*.html` dosyalarını elle düzenlemeyin.
+
+## Referans logoları
+
+Alttaki kayan referans barı `src/layout.html` içinde. Logo dosyaları `assets/img/ref/` altında; şu an yalnızca Harves logosu var, AlPolimer, Özdoğu ve Damper geçici olarak yazıyla gösteriliyor. Logo geldiğinde dosyayı bu klasöre koyup ilgili `<span class="logo-word">` satırını `<img>` ile değiştirin (her iki listede de).
 
 ## Yerelde açma
 

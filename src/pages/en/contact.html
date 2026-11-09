@@ -1,0 +1,63 @@
+title: Contact | AIgro
+description: Get in touch with the AIgro team to book a smart nutrient dosing pilot, a water monitoring installation or a vertical farming R&D partnership.
+header: solid
+og_image: assets/img/og-cover-en.jpg
+active: iletisim
+---
+<main id="main">
+  <section class="section bg-ice" style="padding-top: calc(var(--header-h) + clamp(48px, 7vw, 96px))" aria-labelledby="page-title">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h1 id="page-title" style="font-size: clamp(2.2rem, 4.4vw, 3.4rem)">Let's book a meeting</h1>
+        <p class="lead">A pilot, an installation or a partnership: tell us briefly what you need and we'll get back to you. We can show you the system from the field live on the dashboard.</p>
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:{{email}}"><span class="ic">[[I mail]]</span><span><small>E-mail · Muhammed Kurdaş</small><strong>{{email}}</strong></span></a>
+        </div>
+        <ul class="checklist">
+          <li><span class="tick">[[I check]]</span><div><strong>Live dashboard demo</strong><span class="d">Let's open the water monitoring system from the field together</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>Site visit</strong><span class="d">Let's choose the right line for a pilot together</span></div></li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal reveal-d1">
+        <form id="contact-form" data-to="{{email}}" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-ad">Full name</label>
+              <input id="f-ad" name="ad" type="text" autocomplete="name" required aria-describedby="e-ad">
+              <p class="err" id="e-ad">Please enter your name.</p>
+            </div>
+            <div class="field">
+              <label for="f-kurum">Organisation <span class="opt">(optional)</span></label>
+              <input id="f-kurum" name="kurum" type="text" autocomplete="organization">
+            </div>
+            <div class="field full">
+              <label for="f-eposta">E-mail</label>
+              <input id="f-eposta" name="eposta" type="email" autocomplete="email" required aria-describedby="e-eposta">
+              <p class="err" id="e-eposta">Please enter a valid e-mail address.</p>
+            </div>
+            <div class="field full">
+              <label for="f-konu">Area of interest</label>
+              <select id="f-konu" name="konu">
+                <option>Smart nutrient dosing pilot</option>
+                <option>Water monitoring installation</option>
+                <option>Vertical farming module / R&amp;D partnership</option>
+                <option>Project partnership</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="f-mesaj">Your message</label>
+              <textarea id="f-mesaj" name="mesaj" required aria-describedby="e-mesaj"></textarea>
+              <p class="err" id="e-mesaj">Please write a short message.</p>
+            </div>
+          </div>
+          <button class="btn btn-dark mt-2" type="submit">Prepare as e-mail [[I arrow icon icon-arrow]]</button>
+          <p class="form-note">This form does not send your details to a server; it opens your e-mail app with the message ready.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
