@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <link rel="canonical" href="{{canonical}}">
+  <meta name="theme-color" content="#0C1A2E">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="AIgro · AKSİYOM">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://rsms.me">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+{{sprite}}
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<header class="site-header {{header_class}}">
+  <div class="container bar">
+    <a class="brand" href="index.html" aria-label="AIgro ana sayfa">
+      <img class="brand-logo dark" src="assets/img/aksiyom-logo.png" alt="AKSİYOM" width="726" height="142">
+      <img class="brand-logo light" src="assets/img/aksiyom-logo-light.png" alt="" width="726" height="142">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="wordmark aigro"><span class="ai">AI</span>gro</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menüyü aç</span><span class="bars" aria-hidden="true"></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Ana menü">
+      <ul class="nav-list">
+        <li class="has-dropdown">
+          <button class="nav-link" type="button" data-dropdown aria-expanded="false" aria-controls="dd-solutions"{{cur_cozum}}>
+            Çözümler [[I chev chev]]
+          </button>
+          <div class="dropdown" id="dd-solutions">
+            <a href="akilli-dozajlama.html"{{cur_dozaj}}>
+              <span class="dd-icon">[[I flask]]</span>
+              <span><strong>Akıllı Besin Dozajlama <span class="chip chip-pilot">Pilot</span></strong><span class="desc">pH ve EC'yi öngören, güvenlik sınırlı otonom dozaj</span></span>
+            </a>
+            <a href="su-takibi.html"{{cur_su}}>
+              <span class="dd-icon">[[I drop]]</span>
+              <span><strong>Su Takip Sistemi <span class="chip chip-live">Sahada</span></strong><span class="desc">Depo seviyesi, sıcaklık, bulanıklık ve alarm</span></span>
+            </a>
+            <a href="dikey-tarim.html"{{cur_dikey}}>
+              <span class="dd-icon">[[I shelves]]</span>
+              <span><strong>Dikey Tarım Modülü <span class="chip chip-rnd">Ar-Ge</span></strong><span class="desc">Kafe ve restoranlar için yerinde yetiştirme</span></span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="index.html#platform">Platform</a></li>
+        <li><a class="nav-link" href="index.html#saha">Sahadan</a></li>
+        <li><a class="nav-link" href="index.html#hakkimizda">Hakkımızda</a></li>
+      </ul>
+      <a class="btn btn-primary btn-sm nav-cta" href="iletisim.html"{{cur_iletisim}}>Görüşme planlayın [[I arrow icon icon-arrow]]</a>
+    </nav>
+  </div>
+</header>
+
+{{body}}
+
+<footer class="site-footer on-dark">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/img/aksiyom-logo-light.png" alt="AKSİYOM İleri Teknoloji ve Ar-Ge" width="726" height="142" loading="lazy">
+        <p><span class="aigro"><span class="ai">AI</span>gro</span>, AKSİYOM İleri Teknoloji ve Ar-Ge'nin topraksız tarım ve su yönetimi çözümleridir. Sensör, kontrol kartı, yazılım ve kurulum aynı ekipten.</p>
+      </div>
+      <div>
+        <h2>Çözümler</h2>
+        <ul>
+          <li><a href="akilli-dozajlama.html">Akıllı Besin Dozajlama</a></li>
+          <li><a href="su-takibi.html">Su Takip Sistemi</a></li>
+          <li><a href="dikey-tarim.html">Dikey Tarım Modülü</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kurumsal</h2>
+        <ul>
+          <li><a href="index.html#platform">Platform</a></li>
+          <li><a href="index.html#saha">Sahadan</a></li>
+          <li><a href="index.html#hakkimizda">Hakkımızda</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>İletişim</h2>
+        <ul>
+          <li><a href="mailto:muhammed.kurdas@aksiyomtech.com">muhammed.kurdas@aksiyomtech.com</a></li>
+          <li><a href="https://aksiyomtech.com" rel="noopener">aksiyomtech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year">2026</span> AKSİYOM İleri Teknoloji ve Ar-Ge. Tüm hakları saklıdır.</p>
+      <p>Hedef oranlar literatüre dayalıdır, garanti değildir. Panel ve konsept görselleri üzerinde belirtilmiştir. Sera atmosfer fotoğrafları temsilidir (Unsplash lisansı).</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

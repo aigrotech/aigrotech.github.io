@@ -1,0 +1,211 @@
+title: Akıllı Besin Dozajlama | AIgro
+description: AIgro Akıllı Besin Dozajlama: topraksız serada pH ve EC'yi önceden tahmin eden, kararını açıklayan ve her komutu kart üzerindeki güvenlik katmanıyla denetleyen otonom dozaj sistemi.
+header: overlay
+active: dozaj
+og_image: assets/img/og-cover.jpg
+---
+<main id="main">
+
+  <section class="page-hero on-dark" aria-labelledby="page-title">
+    <div class="hero-media"><img src="[[U 1667509860948-46d20f127b43 2000]]" srcset="[[S 1667509860948-46d20f127b43]]" sizes="100vw" alt="" fetchpriority="high"></div>
+    <div class="container">
+      <ol class="breadcrumb" aria-label="Konum">
+        <li><a href="index.html">Ana sayfa</a></li>
+        <li><a href="index.html#cozumler">Çözümler</a></li>
+        <li aria-current="page">Akıllı Besin Dozajlama</li>
+      </ol>
+      <span class="chip chip-pilot">Pilot aşamasında</span>
+      <h1 id="page-title">Akıllı Besin Dozajlama</h1>
+      <p class="lead">Topraksız serada pH ve EC'yi önceden tahmin eden, kararını açıklayan, güvenli otonom dozaj.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="iletisim.html">Pilot için görüşelim [[I arrow icon icon-arrow]]</a>
+        <a class="btn btn-ghost-light" href="#dongu">Nasıl çalışır</a>
+      </div>
+      <ul class="key-facts">
+        <li>[[I flask]] 3 dozaj kanalı</li>
+        <li>[[I shield]] Kartta güvenlik katmanı</li>
+        <li>[[I home]] İnternetsiz yerel çalışma</li>
+        <li>[[I doc]] Her doz kayıt altında</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="section" aria-labelledby="problem-title">
+    <div class="container split">
+      <div class="reveal">
+        <p class="eyebrow">Sorun</p>
+        <h2 id="problem-title">Sabit eşik, sorunu ancak olduktan sonra görür.</h2>
+        <p class="lead">Elle ya da sabit eşikle yapılan dozaj geç kalıyor. Değer bandın dışına çıktığında müdahale geliyor; gübre ve su boşa gidiyor, kökler strese giriyor.</p>
+        <p class="muted">AIgro bu döngüyü tersine çevirir: pH ve EC'nin nereye gittiğini önceden tahmin eder ve bandı korumak için gereken en az dozu seçer.</p>
+      </div>
+      <figure class="media tall reveal reveal-d1">
+        <img src="[[U 1703589535874-4fbb03d93479 1200]]" srcset="[[S 1703589535874-4fbb03d93479]]" sizes="(max-width: 960px) 100vw, 45vw" alt="Serada topraksız yetiştirilen domatesler" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- Loop -->
+  <section class="section bg-paper" id="dongu" aria-labelledby="loop-title">
+    <div class="container split">
+      <div class="reveal">
+        <svg class="loop-diagram" viewBox="0 0 520 520" role="img" aria-labelledby="loop-svg-title">
+          <title id="loop-svg-title">Kapalı döngü: ölçer, öngörür, doğrular, dozlar ve yeniden ölçer</title>
+          <defs>
+            <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00BFA5"/><stop offset="1" stop-color="#247CFF"/></linearGradient>
+            <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#247CFF"/></marker>
+          </defs>
+          <circle cx="260" cy="260" r="186" fill="none" stroke="url(#ring)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+          <path d="M330 92 A186 186 0 0 1 428 190" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M428 330 A186 186 0 0 1 330 428" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M190 428 A186 186 0 0 1 92 330" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <path d="M92 190 A186 186 0 0 1 190 92" fill="none" stroke="#247CFF" stroke-width="3" marker-end="url(#ah)"/>
+          <circle cx="260" cy="260" r="92" fill="#14243C"/>
+          <text x="260" y="250" text-anchor="middle" fill="#6FE3D2" font-size="13" font-weight="700" letter-spacing="2">KAPALI</text>
+          <text x="260" y="276" text-anchor="middle" fill="#fff" font-size="22" font-weight="800">Döngü</text>
+          <g font-weight="700" text-anchor="middle">
+            <circle cx="260" cy="74" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="260" y="66" font-size="12" fill="#00796B">01</text><text x="260" y="88" font-size="17" fill="#14243C">Ölçer</text>
+            <circle cx="446" cy="260" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="446" y="252" font-size="12" fill="#00796B">02</text><text x="446" y="274" font-size="17" fill="#14243C">Öngörür</text>
+            <circle cx="260" cy="446" r="54" fill="#7B204F"/>
+            <text x="260" y="438" font-size="12" fill="#E9A9C8">03</text><text x="260" y="460" font-size="17" fill="#fff">Doğrular</text>
+            <circle cx="74" cy="260" r="54" fill="#fff" stroke="#E1E8F1" stroke-width="2"/>
+            <text x="74" y="252" font-size="12" fill="#00796B">04</text><text x="74" y="274" font-size="17" fill="#14243C">Dozlar</text>
+          </g>
+        </svg>
+      </div>
+      <div class="reveal reveal-d1">
+        <p class="eyebrow">Nasıl çalışır</p>
+        <h2 id="loop-title">Ölçer, öngörür, doğrular, dozlar</h2>
+        <p class="lead">Döngü kapalıdır: her dozdan sonra sistem yeniden ölçer ve bir sonraki kararını buna göre verir.</p>
+        <ul class="checklist">
+          <li><span class="tick">[[I check]]</span><div><strong>01 · Ölçer</strong><span class="d">pH, EC, su sıcaklığı ve tank seviyesi</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>02 · Öngörür</strong><span class="d">Yapay zekâ pH/EC'nin gidişini tahmin eder, en az dozu seçer</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>03 · Doğrular</strong><span class="d">Kontrol kartı her komutu güvenlik sınırlarına göre denetler</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>04 · Dozlar</strong><span class="d">3 kanal: Besin A · Besin B · pH düzenleyici</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety -->
+  <section class="section bg-dark on-dark" aria-labelledby="safety-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Güvenli otonomi</p>
+        <h2 id="safety-title">Yapay zekâ önerir, güvenlik katmanı karar verir.</h2>
+        <p class="lead">Yapay zekâ pompaya doğrudan dokunmaz. Her dozaj komutu, kontrol kartının üzerindeki bağımsız güvenlik katmanından geçer.</p>
+      </div>
+      <div class="features">
+        <article class="feature reveal"><div class="ic">[[I shield]]</div><h3>Güvenlik zarfı</h3><p>Komutlar kartta tanımlı sınırlara göre denetlenir; sınırı aşan komut uygulanmaz.</p></article>
+        <article class="feature reveal reveal-d1"><div class="ic">[[I home]]</div><h3>İnternet kesilse de çalışır</h3><p>Bağlantı koptuğunda sistem yerelde çalışmaya devam eder.</p></article>
+        <article class="feature reveal reveal-d2"><div class="ic">[[I eye]]</div><h3>Açıklanabilir karar</h3><p>Panel her dozu kanal ve miktarıyla kaydeder, neden verildiğini açık dille gösterir.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Panel -->
+  <section class="section" aria-labelledby="panel-title">
+    <div class="container">
+      <div class="section-head-split">
+        <div class="section-head reveal">
+          <p class="eyebrow">AIgro paneli</p>
+          <h2 id="panel-title">Operatör her kararın gerekçesini görür</h2>
+          <p class="lead">Anlık pH ve EC hedef bantla birlikte, her dozaj komutunun kaydı ve sistemin o dozu neden önerdiği tek ekranda.</p>
+        </div>
+        <span class="disclaimer-inline reveal">[[I info]] Panel tasarımı · ekrandaki değerler örnek veridir</span>
+      </div>
+      <div class="browser reveal">
+        <div class="browser-bar"><i></i><i></i><i></i><span class="url">AIgro · Dozajlama · Genel Bakış</span></div>
+        <img src="assets/img/dozaj-panel.webp" alt="AIgro dozajlama paneli tasarımı: anlık pH 5,82 ve EC 2,35, hedef bantlı 24 saatlik trendler, dozaj komut kaydı, açıklanabilir karar paneli (örnek veri)" width="1672" height="941" loading="lazy">
+      </div>
+      <div class="features mt-3">
+        <article class="feature reveal"><div class="ic teal">[[I chart]]</div><h3>Canlı pH / EC</h3><p>Hedef bant ve son 24 saatin trendi.</p></article>
+        <article class="feature reveal reveal-d1"><div class="ic teal">[[I doc]]</div><h3>Dozaj kaydı</h3><p>Her komut; zamanı, kanalı ve miktarıyla.</p></article>
+        <article class="feature reveal reveal-d2"><div class="ic teal">[[I spark]]</div><h3>Karar gerekçesi</h3><p>Neden bu doz verildi, açık dille.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPI -->
+  <section class="section-sm" aria-labelledby="kpi-title">
+    <div class="container">
+      <div class="kpi-band on-dark reveal">
+        <p class="eyebrow">Hedeflediğimiz sonuçlar</p>
+        <h2 id="kpi-title">pH ve EC hedef bantta, kaynaklar kontrol altında</h2>
+        <ul class="kpis">
+          <li><span class="val">%25–35</span><span class="lbl">daha az su</span></li>
+          <li><span class="val">%20–30</span><span class="lbl">daha az gübre</span></li>
+          <li><span class="val">%50+</span><span class="lbl">daha az elle müdahale</span></li>
+          <li><span class="val">%15–25</span><span class="lbl">verim artışı</span></li>
+        </ul>
+        <p class="kpi-note">[[I info]]<span>Rakamlar literatüre dayalı <strong>hedeflerdir</strong>, garanti değildir. Seranızda ölçülür ve olduğu gibi raporlanır.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilot process -->
+  <section class="section" aria-labelledby="pilot-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pilot süreci</p>
+        <h2 id="pilot-title">Seranızda ölçerek başlayalım</h2>
+        <p class="lead">Pilot, bir hatta kurulur. Hedefler sizin seranızda ölçülür; sonuç ne çıkarsa çıksın şeffaf biçimde paylaşılır.</p>
+      </div>
+      <ol class="process">
+        <li class="reveal"><h3>Ziyaret</h3><p>Seranızı ziyaret eder, mevcut dozaj düzeninizi birlikte inceleriz.</p></li>
+        <li class="reveal reveal-d1"><h3>Hat seçimi</h3><p>Pilot için uygun hattı ve hedef bantları birlikte belirleriz.</p></li>
+        <li class="reveal reveal-d2"><h3>Kurulum ve ölçüm</h3><p>Sensörler, kart ve dozaj kanalları kurulur; panelden birlikte izlenir.</p></li>
+        <li class="reveal reveal-d3"><h3>Şeffaf rapor</h3><p>Su, gübre ve müdahale verisi ölçülür, olduğu gibi raporlanır.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-paper" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Sık sorulanlar</p>
+        <h2 id="faq-title">Merak edilenler</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Yapay zekâ pompayı doğrudan mı çalıştırıyor? [[I plus]]</summary>
+          <div class="answer"><p>Hayır. Yapay zekâ doz önerir; komut, kontrol kartındaki bağımsız güvenlik katmanından geçmeden pompaya ulaşmaz.</p></div>
+        </details>
+        <details>
+          <summary>İnternet kesilirse ne olur? [[I plus]]</summary>
+          <div class="answer"><p>Sistem yerelde çalışmaya devam eder. İnternet olmayan alanlarda kart, SIM kartlı mobil veriyle de bağlanabilir.</p></div>
+        </details>
+        <details>
+          <summary>Hangi değerler ölçülüyor? [[I plus]]</summary>
+          <div class="answer"><p>pH, EC, su sıcaklığı ve tank seviyesi. Dozaj üç kanaldan yapılır: Besin A, Besin B ve pH düzenleyici.</p></div>
+        </details>
+        <details>
+          <summary>Belirtilen tasarruf oranları garanti mi? [[I plus]]</summary>
+          <div class="answer"><p>Hayır. Oranlar literatüre dayalı hedeflerdir. Pilot kurulumda sizin seranızda ölçülür ve sonuç ne çıkarsa olduğu gibi raporlanır.</p></div>
+        </details>
+        <details>
+          <summary>Pilot nasıl başlıyor? [[I plus]]</summary>
+          <div class="answer"><p>İlk adım seranızı ziyaret edip uygun hattı birlikte seçmek. <a href="iletisim.html">İletişim sayfasından</a> görüşme talep edebilirsiniz.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-band on-dark reveal">
+        <img src="[[U 1775681150283-04970adf1b98 1600]]" srcset="[[S 1775681150283-04970adf1b98]]" sizes="100vw" alt="" loading="lazy">
+        <div>
+          <h2 id="cta-title">Bir hatta birlikte deneyelim.</h2>
+          <p>Seranızı ziyaret edip pilot için uygun hattı birlikte seçelim.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="iletisim.html">Pilot görüşmesi planlayın [[I arrow icon icon-arrow]]</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

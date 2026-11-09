@@ -1,0 +1,64 @@
+title: İletişim | AIgro
+description: AIgro ekibiyle iletişime geçin: akıllı besin dozajlama pilotu, su takip sistemi kurulumu veya dikey tarım Ar-Ge iş birliği için görüşme planlayın.
+header: solid
+og_image: assets/img/og-cover.jpg
+active: iletisim
+---
+<main id="main">
+  <section class="section bg-ice" style="padding-top: calc(var(--header-h) + clamp(48px, 7vw, 96px))" aria-labelledby="page-title">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">İletişim</p>
+        <h1 id="page-title" style="font-size: clamp(2.2rem, 4.4vw, 3.4rem)">Görüşme planlayalım</h1>
+        <p class="lead">Pilot, kurulum ya da iş birliği; ihtiyacınızı kısaca yazın, size dönelim. Sahadaki sistemi panelden canlı gösterebiliriz.</p>
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:muhammed.kurdas@aksiyomtech.com"><span class="ic">[[I mail]]</span><span><small>E-posta · Muhammed Kurdaş</small><strong>muhammed.kurdas@aksiyomtech.com</strong></span></a>
+          <a class="contact-card" href="https://aksiyomtech.com" rel="noopener"><span class="ic">[[I globe]]</span><span><small>Kurumsal web sitesi</small><strong>aksiyomtech.com</strong></span></a>
+        </div>
+        <ul class="checklist">
+          <li><span class="tick">[[I check]]</span><div><strong>Canlı panel gösterimi</strong><span class="d">Sahadaki su takip sistemini birlikte açalım</span></div></li>
+          <li><span class="tick">[[I check]]</span><div><strong>Saha ziyareti</strong><span class="d">Pilot için uygun hattı birlikte seçelim</span></div></li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal reveal-d1">
+        <form id="contact-form" data-to="muhammed.kurdas@aksiyomtech.com" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-ad">Ad Soyad</label>
+              <input id="f-ad" name="ad" type="text" autocomplete="name" required aria-describedby="e-ad">
+              <p class="err" id="e-ad">Lütfen adınızı yazın.</p>
+            </div>
+            <div class="field">
+              <label for="f-kurum">Kurum <span class="opt">(isteğe bağlı)</span></label>
+              <input id="f-kurum" name="kurum" type="text" autocomplete="organization">
+            </div>
+            <div class="field full">
+              <label for="f-eposta">E-posta</label>
+              <input id="f-eposta" name="eposta" type="email" autocomplete="email" required aria-describedby="e-eposta">
+              <p class="err" id="e-eposta">Geçerli bir e-posta adresi yazın.</p>
+            </div>
+            <div class="field full">
+              <label for="f-konu">İlgi alanı</label>
+              <select id="f-konu" name="konu">
+                <option>Akıllı besin dozajlama pilotu</option>
+                <option>Su takip sistemi kurulumu</option>
+                <option>Dikey tarım modülü / Ar-Ge iş birliği</option>
+                <option>Proje ortaklığı</option>
+                <option>Diğer</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="f-mesaj">Mesajınız</label>
+              <textarea id="f-mesaj" name="mesaj" required aria-describedby="e-mesaj"></textarea>
+              <p class="err" id="e-mesaj">Lütfen kısa bir mesaj yazın.</p>
+            </div>
+          </div>
+          <button class="btn btn-dark mt-2" type="submit">E-posta olarak hazırla [[I arrow icon icon-arrow]]</button>
+          <p class="form-note">Bu form bilgilerinizi bir sunucuya göndermez; e-posta uygulamanızı mesaj hazır olarak açar.</p>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
