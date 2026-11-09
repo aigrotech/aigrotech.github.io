@@ -8,7 +8,7 @@ AIgro çözümlerini anlatan iki dilli (TR/EN) statik site: Akıllı Besin Dozaj
 | --- | --- |
 | `index.html` | Ana sayfa: çözümler, platform, panel, hedefler, saha, hakkımızda |
 | `akilli-dozajlama.html` | Kapalı döngü, güvenlik katmanı, panel, pilot süreci, SSS |
-| `su-takibi.html` | Özellikler, gerçek panel, saha kurulumu, referanslar, SSS |
+| `su-takibi.html` | Özellikler, gerçek panel, saha kurulumu, SSS |
 | `dikey-tarim.html` | Konsept, modül yapısı ve ölçüler, bitkiler |
 | `iletisim.html` | İletişim; form e-posta uygulamasını açar (sunucuya veri göndermez) |
 | `en/*.html` | İngilizce karşılıklar: `index`, `smart-dosing`, `water-monitoring`, `vertical-farming`, `contact` |
