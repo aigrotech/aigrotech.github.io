@@ -60,7 +60,7 @@ def card(lines: list[str], tagline: str, chips: list[str], out: Path) -> None:
 
 
 if __name__ == "__main__":
-    card(["Topraksız tarımda akıllı", "dozajlama, su takibi", "ve dikey tarım"], "Ölçer, öngörür, güvenle uygular.",
+    card(["Yapay zekâ ile akıllı", "dozajlama, su takibi", "ve dikey tarım"], "Ölçer, öngörür, güvenle uygular.",
          ["Su takibi", "Akıllı dozajlama", "Dikey tarım"], IMG / "og-cover.jpg")
-    card(["Smart nutrient dosing,", "water monitoring and", "vertical farming"], "Measures, forecasts, acts safely.",
+    card(["AI-powered dosing,", "water monitoring and", "vertical farming"], "Measures, forecasts, acts safely.",
          ["Water monitoring", "Smart dosing", "Vertical farming"], IMG / "og-cover-en.jpg")
