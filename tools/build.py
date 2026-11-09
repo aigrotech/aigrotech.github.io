@@ -30,7 +30,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 SITE_URL = "https://tarikyil.github.io/aigro-web/"
-CONTACT_EMAIL = "muhammed.kurdas@aksiyomtech.com"  # TODO: replace once the new company domain is live
+CONTACT_EMAIL = "muhammedkurdas@gmail.com"
 
 LANGS = {
     "tr": {"dir": "", "root": "", "locale": "tr_TR"},
