@@ -44,7 +44,7 @@ python -m http.server 8765
 
 1. Depoyu GitHub'a gönderin (`main`).
 2. Settings → Pages → Source: **Deploy from a branch**, `main` / `(root)`.
-3. Site `https://<kullanıcı>.github.io/<depo>/` adresinde açılır. Adres farklıysa `tools/build.py` içindeki `SITE_URL`'i güncelleyip yeniden derleyin (canonical ve paylaşım önizlemesi bu adresi kullanır).
+3. Site `https://aigrotech.github.io/` adresinde açılır (organizasyon: aigrotech, depo: aigrotech.github.io). Adres değişirse `tools/build.py` içindeki `SITE_URL`'i güncelleyip yeniden derleyin (canonical ve paylaşım önizlemesi bu adresi kullanır).
 
 ## İçerik kuralları
 
